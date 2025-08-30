@@ -16,11 +16,12 @@ export default function WelcomeSplash() {
 
   return (
     <SafeAreaView className="flex-1">
-      <Box className="absolute top-4 right-6 z-10">
-        <ThemeToggle />
-      </Box>
+
 
       <Box className="flex-1 px-6 justify-between">
+        <Box className="absolute top-0 right-6 z-10">
+          <ThemeToggle />
+        </Box>
         {/* Main content centered */}
         <Center className="flex-1">
           <VStack space="xl" className="items-center">

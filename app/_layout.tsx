@@ -37,7 +37,7 @@ export default function RootLayout() {
     <ThemeContext.Provider value={themeState}>
       <GluestackUIProvider mode={themeState.isDarkMode ? 'dark' : 'light'}>
         <ThemeProvider value={themeState.isDarkMode ? DarkTheme : DefaultTheme}>
-          <Stack />
+          <Stack screenOptions={{ headerShown: false }} />
         </ThemeProvider>
       </GluestackUIProvider>
     </ThemeContext.Provider>
