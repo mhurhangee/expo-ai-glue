@@ -1,4 +1,5 @@
 import { Icon } from '@/components/icon';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { Box } from '@/components/ui/box';
 import { Button, ButtonText } from '@/components/ui/button';
 import { Center } from '@/components/ui/center';
@@ -15,8 +16,11 @@ export default function WelcomeSplash() {
 
   return (
     <SafeAreaView className="flex-1">
+      <Box className="absolute top-4 right-6 z-10">
+        <ThemeToggle />
+      </Box>
+
       <Box className="flex-1 px-6 justify-between">
-        
         {/* Main content centered */}
         <Center className="flex-1">
           <VStack space="xl" className="items-center">
@@ -60,7 +64,7 @@ export default function WelcomeSplash() {
                 <Icon name="github" variant="muted" />
               </Link>
               <Link href="mailto:m.hurhangee@me.com">
-              <Icon name="envelope" variant="muted" />
+                <Icon name="envelope" variant="muted" />
               </Link>
             </HStack>
           </VStack>
