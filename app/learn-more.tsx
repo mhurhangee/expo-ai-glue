@@ -46,8 +46,8 @@ const FAQAccordionItem = ({
                                     {title}
                                 </AccordionTitleText>
                             </HStack>
-                            <View className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : 'rotate-0'}`}>
-                                <Icon name="chevron-down" size={14} variant="secondary" />
+                            <View>
+                            <Icon name={isExpanded ? "chevron-up" : "chevron-down"} size={14} variant="secondary" />
                             </View>
                         </>
                     )}
