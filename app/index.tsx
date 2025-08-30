@@ -9,9 +9,15 @@ import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
 import { SafeAreaView } from 'react-native';
 
+import { router } from 'expo-router';
+
 export default function WelcomeSplash() {
   const handleGetStarted = () => {
     console.log('Get Started pressed');
+  };
+
+  const handleLearnMore = () => {
+    router.push('/learn-more');
   };
 
   return (
@@ -44,7 +50,7 @@ export default function WelcomeSplash() {
               <Button
                 variant="solid"
                 action="secondary"
-                onPress={handleGetStarted}
+                onPress={handleLearnMore}
                 className="mt-4"
               >
                 <Icon name="book" size={12} className="mr-1" />
