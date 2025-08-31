@@ -65,7 +65,7 @@ export default function WelcomeSplash() {
               Built by m.hurhangee@me.com
             </Text>
             <HStack className="gap-4 mt-4">
-              <Link href="https://github.com/mhurhangee/expo-ai-glue">
+              <Link href="https://github.com/mhurhangee/expo-glue">
                 <Icon name="github" variant="muted" />
               </Link>
               <Link href="mailto:m.hurhangee@me.com">

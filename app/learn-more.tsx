@@ -126,7 +126,7 @@ export default function LearnMore() {
                                     Yes! This project is open source and available on GitHub. Feel free to explore the code,
                                     submit issues, or contribute improvements.
                                 </AccordionContentText>
-                                <Link href="https://github.com/mhurhangee/expo-ai-glue">
+                                <Link href="https://github.com/mhurhangee/expo-glue">
                                     <HStack className="items-center">
                                         <Icon name="github" size={16} variant="primary" className="mr-2" />
                                         <Text className="font-body text-primary-600 underline">
@@ -189,7 +189,7 @@ export default function LearnMore() {
                                             <Text className="font-body text-primary-600">m.hurhangee@me.com</Text>
                                         </HStack>
                                     </Link>
-                                    <Link href="https://github.com/mhurhangee/expo-ai-glue">
+                                    <Link href="https://github.com/mhurhangee/expo-glue">
                                         <HStack className="items-center">
                                             <Icon name="github" size={16} variant="primary" className="mr-3" />
                                             <Text className="font-body text-primary-600">GitHub Repository</Text>

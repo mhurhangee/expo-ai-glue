@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-ai-glue",
-    "slug": "expo-ai-glue",
+    "name": "expo-glue",
+    "slug": "expo-glue",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
