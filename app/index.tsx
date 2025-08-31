@@ -13,7 +13,7 @@ import { router } from 'expo-router';
 
 export default function WelcomeSplash() {
   const handleGetStarted = () => {
-    console.log('Get Started pressed');
+    router.push('/tabs');
   };
 
   const handleLearnMore = () => {
@@ -22,8 +22,6 @@ export default function WelcomeSplash() {
 
   return (
     <SafeAreaView className="flex-1">
-
-
       <Box className="flex-1 px-6 justify-between">
         <Box className="absolute top-0 right-6 z-10">
           <ThemeToggle />
