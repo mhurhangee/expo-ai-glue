@@ -175,14 +175,34 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: undefined,
-        body: undefined,
-        mono: undefined,
+        // Main font categories (used by Gluestack components)
+        heading: ['SpaceGrotesk_600SemiBold', 'SpaceGrotesk_700Bold'],
+        body: ['Inter_400Regular', 'Inter_500Medium'],
+        mono: ['SpaceMono_400Regular', 'SpaceMono_700Bold'],
+        
+        // Individual font families for specific use
+        inter: [
+          'Inter_400Regular', 
+          'Inter_500Medium', 
+          'Inter_600SemiBold', 
+          'Inter_700Bold'
+        ],
+        'space-grotesk': [
+          'SpaceGrotesk_300Light',
+          'SpaceGrotesk_400Regular', 
+          'SpaceGrotesk_500Medium',
+          'SpaceGrotesk_600SemiBold',
+          'SpaceGrotesk_700Bold'
+        ],
+        'space-mono': [
+          'SpaceMono_400Regular', 
+          'SpaceMono_700Bold'
+        ],
+        
+        // Keep existing ones
         jakarta: ['var(--font-plus-jakarta-sans)'],
         roboto: ['var(--font-roboto)'],
         code: ['var(--font-source-code-pro)'],
-        inter: ['var(--font-inter)'],
-        'space-mono': ['var(--font-space-mono)'],
       },
       fontWeight: {
         extrablack: '950',
