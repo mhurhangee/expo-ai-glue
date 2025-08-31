@@ -6,7 +6,7 @@ A modern React Native demo app showcasing cross-platform mobile development with
 
 <div align="center">
   <img src="public/dark-mode-home.PNG" width="300" alt="Dark Mode Home" />
-  <img src="public/light-mode-settings.png" width="300" alt="Light Mode Settings" />
+  <img src="public/light-mode-settings.PNG" width="300" alt="Light Mode Settings" />
 </div>
 
 *Light mode settings screen and dark mode home screen showcasing the adaptive theme system
