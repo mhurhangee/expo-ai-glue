@@ -180,7 +180,7 @@ export default function LearnMore() {
                         <FAQAccordionItem value="contact" icon="envelope" title="Have questions or feedback?">
                             <VStack space="md">
                                 <AccordionContentText className="font-body text-typography-700">
-                                    I'd love to hear from you! Reach out through any of these channels:
+                                    I&apos;d love to hear from you! Reach out through any of these channels:
                                 </AccordionContentText>
                                 <VStack space="sm">
                                     <Link href="mailto:m.hurhangee@me.com">
