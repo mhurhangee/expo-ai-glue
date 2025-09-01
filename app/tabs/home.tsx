@@ -1,5 +1,4 @@
 import { Icon } from '@/components/icon';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Box } from '@/components/ui/box';
 import { Button, ButtonText } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
@@ -13,9 +12,6 @@ export default function HomeTab() {
     <SafeAreaView className="flex-1">
       <Box className="flex-1 px-6 py-8">
         {/* Header with theme toggle */}
-        <Box className="absolute top-0 right-6 z-10">
-          <ThemeToggle />
-        </Box>
 
         <VStack space="xl" className="flex-1">
           <VStack space="md">

@@ -11,7 +11,7 @@ export const ThemeToggle = () => {
     className="p-2 rounded-full bg-background active:bg-background-200"
   >
     <Icon 
-      name={isDarkMode ? "sun-o" : "moon-o"} 
+      name={isDarkMode ? "sun" : "moon"} 
       size={20} 
       variant="primary" 
     />

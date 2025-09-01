@@ -1,5 +1,4 @@
 import { Icon } from '@/components/icon';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Avatar, AvatarFallbackText } from '@/components/ui/avatar';
 import { Box } from '@/components/ui/box';
 import { Button, ButtonText } from '@/components/ui/button';
@@ -14,9 +13,6 @@ export default function ProfileTab() {
     <SafeAreaView className="flex-1">
       <ScrollView className="flex-1">
         <Box className="flex-1 px-6 py-8">
-          <Box className="absolute top-0 right-6 z-10">
-            <ThemeToggle />
-          </Box>
 
           <VStack space="xl">
             {/* Profile Header */}

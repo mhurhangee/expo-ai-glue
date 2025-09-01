@@ -1,5 +1,4 @@
 import { Icon } from '@/components/icon';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { Box } from '@/components/ui/box';
 import { Heading } from '@/components/ui/heading';
 import { HStack } from '@/components/ui/hstack';
@@ -13,10 +12,6 @@ export default function ExploreTab() {
     <SafeAreaView className="flex-1">
       <ScrollView className="flex-1">
         <Box className="flex-1 px-6 py-8">
-          <Box className="absolute top-0 right-6 z-10">
-            <ThemeToggle />
-          </Box>
-
           <VStack space="xl">
             <VStack space="md">
               <Heading className="text-3xl font-heading font-bold text-typography-900">

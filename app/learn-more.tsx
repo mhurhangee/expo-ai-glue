@@ -18,6 +18,7 @@ import { HStack } from '@/components/ui/hstack';
 import { Link } from '@/components/ui/link';
 import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
+import FeatherIcon from '@expo/vector-icons/Feather';
 import { router } from 'expo-router';
 import React from 'react';
 import { SafeAreaView, View } from 'react-native';
@@ -30,7 +31,7 @@ const FAQAccordionItem = ({
     children
 }: {
     value: string;
-    icon: string;
+    icon: React.ComponentProps<typeof FeatherIcon>['name'];
     title: string;
     children: React.ReactNode;
 }) => {
@@ -96,7 +97,7 @@ export default function LearnMore() {
                         isCollapsible={true}
                         className="w-full"
                     >
-                        <FAQAccordionItem value="demo" icon="mobile" title="What is this demo app?">
+                        <FAQAccordionItem value="help-circle" icon="phone" title="What is this demo app?">
                             <AccordionContentText className="font-body text-typography-700">
                                 This is a demonstration app showcasing modern React Native development with Expo Router,
                                 Gluestack UI v3, and Tailwind CSS. It features dark mode support, custom fonts, and
@@ -104,7 +105,7 @@ export default function LearnMore() {
                             </AccordionContentText>
                         </FAQAccordionItem>
 
-                        <FAQAccordionItem value="tech" icon="cog" title="What's the tech stack?">
+                        <FAQAccordionItem value="tech" icon="settings" title="What's the tech stack?">
                             <VStack space="sm">
                                 <AccordionContentText className="font-body text-typography-700">
                                     Built with modern tools for cross-platform development:
@@ -162,7 +163,7 @@ export default function LearnMore() {
                             </VStack>
                         </FAQAccordionItem>
 
-                        <FAQAccordionItem value="started" icon="rocket" title="How do I get started?">
+                        <FAQAccordionItem value="started" icon="play" title="How do I get started?">
                             <VStack space="md">
                                 <AccordionContentText className="font-body text-typography-700">
                                     Clone the repository and follow these steps:
@@ -177,7 +178,7 @@ export default function LearnMore() {
                             </VStack>
                         </FAQAccordionItem>
 
-                        <FAQAccordionItem value="contact" icon="envelope" title="Have questions or feedback?">
+                        <FAQAccordionItem value="contact" icon="mail" title="Have questions or feedback?">
                             <VStack space="md">
                                 <AccordionContentText className="font-body text-typography-700">
                                     I&apos;d love to hear from you! Reach out through any of these channels:
@@ -185,7 +186,7 @@ export default function LearnMore() {
                                 <VStack space="sm">
                                     <Link href="mailto:m.hurhangee@me.com">
                                         <HStack className="items-center">
-                                            <Icon name="envelope" size={16} variant="primary" className="mr-3" />
+                                            <Icon name="mail" size={16} variant="primary" className="mr-3" />
                                             <Text className="font-body text-primary-600">m.hurhangee@me.com</Text>
                                         </HStack>
                                     </Link>
