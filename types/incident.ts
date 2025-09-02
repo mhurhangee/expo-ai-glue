@@ -1,4 +1,3 @@
-// types/ditto.ts
 import type { Ditto } from '@dittolive/ditto';
 
 export interface DittoIncidentState {
@@ -22,9 +21,9 @@ export interface MeshStatus {
 }
 
 export interface IncidentIdentity {
-  type: 'sharedKey';
+  type: 'offlinePlayground';
   appID: string;
-  sharedKey: string;
+  offlineToken: string;
 }
 
 export interface IncidentReport {

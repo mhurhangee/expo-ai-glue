@@ -1,6 +1,6 @@
 import { Icon } from '@/components/icon';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Badge } from '@/components/ui/badge';
+import { Badge, BadgeText } from '@/components/ui/badge';
 import { Button, ButtonText } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { HStack } from '@/components/ui/hstack';
@@ -48,7 +48,9 @@ export default function SettingsScreen() {
               <HStack className="justify-between items-center">
                 <Text className="text-lg font-bold">Current Incident</Text>
                 {isInitialized && (
-                  <Badge variant="success">Active</Badge>
+                  <Badge variant="success">
+                    <BadgeText>Active</BadgeText>
+                  </Badge>
                 )}
               </HStack>
               

@@ -1,4 +1,3 @@
-// app/tabs/_layout.tsx
 import { Icon } from '@/components/icon';
 import { MeshStatusIndicator } from '@/components/mesh-status-indicator';
 import { useTheme } from '@/hooks/use-theme';

@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge';
+import { Badge, BadgeText } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
@@ -76,7 +76,7 @@ export default function NetworkScreen() {
               <HStack className="justify-between">
                 <Text>Status:</Text>
                 <Badge variant={isConnected ? 'success' : 'warning'}>
-                  {isConnected ? 'Connected' : 'Standalone'}
+                  <BadgeText>{isConnected ? 'Connected' : 'Standalone'}</BadgeText>
                 </Badge>
               </HStack>
               

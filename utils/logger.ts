@@ -1,4 +1,3 @@
-// utils/ditto-logger.ts
 import type { Ditto } from '@dittolive/ditto';
 
 /**

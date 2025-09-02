@@ -1,30 +1,23 @@
+import { TransportConfig } from '@dittolive/ditto';
+import { Platform } from 'react-native';
+
 /**
  * Emergency transport configuration for Ditto mesh networking
- * Configure transports appropriate for emergency response scenarios
+ * Based on the working example provided
  */
-export function createEmergencyTransportConfig() {
-  return {
-    // Enable peer-to-peer transports for offline scenarios
-    peerToPeer: {
-      // Bluetooth Low Energy for close-range communication
-      bluetoothLE: {
-        enabled: true,
-      },
-      // Local Area Network for WiFi connections
-      lan: {
-        enabled: true,
-        mdnsEnabled: true, // For device discovery on local networks
-      },
-      // AWDL (Apple Wireless Direct Link) on iOS
-      awdl: {
-        enabled: true,
-      },
-    },
-    
-    // Enable connection to Ditto Server when internet is available
-    // This allows for initial authentication and broader sync
-    connect: {
-      websocketURL: 'wss://cloud.ditto.live/ws',
-    },
-  };
+export function createEmergencyTransportConfig(): TransportConfig {
+  const transportsConfig = new TransportConfig();
+  
+  // Enable peer-to-peer transports for offline mesh networking
+  transportsConfig.peerToPeer.bluetoothLE.isEnabled = true;
+  transportsConfig.peerToPeer.lan.isEnabled = true;
+  transportsConfig.peerToPeer.lan.isMdnsEnabled = true;
+  transportsConfig.peerToPeer.lan.isMulticastEnabled = true;
+
+  // Apple Wireless Direct Link is only available on Apple devices
+  if (Platform.OS === 'ios') {
+    transportsConfig.peerToPeer.awdl.isEnabled = true;
+  }
+
+  return transportsConfig;
 }

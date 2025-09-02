@@ -1,4 +1,3 @@
-// utils/ditto-key.ts
 import type { IncidentIdentity } from '@/types/incident';
 
 /**
@@ -33,12 +32,10 @@ export async function deriveIncidentKey(incidentKey: string): Promise<string> {
  * Creates a Ditto identity for a specific incident
  */
 export async function createIncidentIdentity(incidentKey: string): Promise<IncidentIdentity> {
-  const sharedKey = await deriveIncidentKey(incidentKey);
-  
   return {
-    type: 'sharedKey',
+    type: 'offlinePlayground',
     appID: `incident-${incidentKey}`,
-    sharedKey,
+    offlineToken: 'o2d1c2VyX2lkdTEwMTE0MTAzOTQ3Mzk1MjI5MjA1NmZleHBpcnl4GDIwMjUtMDktMzBUMjI6NTk6NTkuOTk5WmlzaWduYXR1cmV4WFRudUdIb2x6TEx2QjVqcjExMXZLaFV6NzFSRVRMV1B2RDZnd0o0UEQ4WU1ibWxpKzlYdnlTOGNjeVBMQnhabHVOclZPeGY5amNOUzR5ekFiSm45a2hRPT0=',
   };
 }
 

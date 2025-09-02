@@ -1,4 +1,3 @@
-// app/_layout.tsx
 import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
 import { IncidentDittoProvider } from '@/context/incident-ditto-context';
 import '@/global.css';
@@ -9,7 +8,7 @@ import {
   DefaultTheme,
   ThemeProvider,
 } from '@react-navigation/native';
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from "react";
 
@@ -20,9 +19,6 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const themeState = useThemeState();
   const [loaded, error] = useCustomFonts();
-  
-  // Get incident key from route params (passed from welcome screen)
-  const { incidentKey } = useLocalSearchParams<{ incidentKey?: string }>();
 
   useEffect(() => {
     if (error) throw error;
@@ -42,7 +38,8 @@ export default function RootLayout() {
     <ThemeContext.Provider value={themeState}>
       <GluestackUIProvider mode={themeState.isDarkMode ? 'dark' : 'light'}>
         <ThemeProvider value={themeState.isDarkMode ? DarkTheme : DefaultTheme}>
-          <IncidentDittoProvider incidentKey={incidentKey}>
+          {/* No longer needs incidentKey prop */}
+          <IncidentDittoProvider>
             <Stack screenOptions={{ headerShown: false }}>
               <Stack.Screen 
                 name="index" 

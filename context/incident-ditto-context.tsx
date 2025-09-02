@@ -1,4 +1,3 @@
-// context/incident-ditto-context.tsx
 import { useDittoIncident } from '@/hooks/use-ditto-incident';
 import { useMeshStatus } from '@/hooks/use-mesh-status';
 import type { IncidentDittoContextValue } from '@/types/incident';
@@ -8,18 +7,16 @@ import React, { createContext, ReactNode, useContext } from 'react';
 // Create the context
 export const IncidentDittoContext = createContext<IncidentDittoContextValue | null>(null);
 
-// Provider props
+// Provider props - no longer needs incidentKey
 export interface IncidentDittoProviderProps {
   children: ReactNode;
-  incidentKey?: string;
 }
 
-// Provider component
+// Provider component - simplified
 export const IncidentDittoProvider: React.FC<IncidentDittoProviderProps> = ({ 
-  children, 
-  incidentKey 
+  children 
 }) => {
-  const { ditto, isInitialized, error, currentIncident } = useDittoIncident(incidentKey);
+  const { ditto, isInitialized, error, currentIncident } = useDittoIncident();
   const { isConnected } = useMeshStatus(ditto, isInitialized, currentIncident);
 
   const contextValue: IncidentDittoContextValue = {

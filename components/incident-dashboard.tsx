@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge';
+import { Badge, BadgeText } from '@/components/ui/badge';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
@@ -33,11 +33,15 @@ export function IncidentDashboard() {
       
       <HStack space="md">
         <Badge variant={isConnected ? 'success' : 'warning'}>
-          {isConnected ? '🟢 Connected' : '🟡 Standalone'}
+          <BadgeText>
+            {isConnected ? '🟢 Connected' : '🟡 Standalone'}
+          </BadgeText>
         </Badge>
         
         <Badge variant="outline">
-          {connectedPeers} Responders
+          <BadgeText>
+            {connectedPeers} Responders
+          </BadgeText>
         </Badge>
       </HStack>
     </VStack>

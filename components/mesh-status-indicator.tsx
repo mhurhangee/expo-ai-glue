@@ -1,5 +1,4 @@
-// components/examples/mesh-status-indicator.tsx
-import { Badge } from '@/components/ui/badge';
+import { Badge, BadgeText } from '@/components/ui/badge';
 import { Box } from '@/components/ui/box';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
@@ -47,7 +46,7 @@ export function MeshStatusIndicator() {
             variant={isConnected ? 'success' : 'warning'} 
             className="text-xs"
           >
-            {isConnected ? `🟢 ${connectedPeers}` : '🟡 Solo'}
+            <BadgeText> {isConnected ? `🟢 ${connectedPeers}` : '🟡 Solo'}</BadgeText>
           </Badge>
         </HStack>
       </HStack>

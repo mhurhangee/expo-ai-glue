@@ -1,4 +1,3 @@
-// hooks/use-incident-mesh-status.ts
 import { useIncidentDitto } from '@/context/incident-ditto-context';
 import { useMeshStatus } from '@/hooks/use-mesh-status';
 import type { MeshStatus } from '@/types/incident';

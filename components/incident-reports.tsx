@@ -1,19 +1,22 @@
-import { Badge } from '@/components/ui/badge';
+import { Badge, BadgeText } from '@/components/ui/badge';
 import { Button, ButtonText } from '@/components/ui/button';
 import { HStack } from '@/components/ui/hstack';
 import { Input, InputField } from '@/components/ui/input';
 import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
 import { useDitto } from '@/context/incident-ditto-context';
-import { useDittoCollection, useDittoLiveQuery } from '@/hooks/use-incident-collection';
+import { useDittoCollection, useDittoLiveQuery, useDittoUpsert } from '@/hooks/use-incident-collection';
 import type { IncidentReport } from '@/types/incident';
-import { incidentLogger } from '@/utils/logger';
 import React, { useState } from 'react';
 
 export function IncidentReports() {
   const ditto = useDitto();
-  const { collection, error } = useDittoCollection(ditto, 'incident_reports');
-  const { documents: reports, isLoading } = useDittoLiveQuery<IncidentReport>(collection);
+  const { collectionName, error: collectionError } = useDittoCollection(ditto, 'incident_reports');
+  const { documents: reports, isLoading, error: queryError } = useDittoLiveQuery<IncidentReport>(
+    ditto, 
+    'incident_reports'
+  );
+  const { upsert } = useDittoUpsert(ditto, 'incident_reports');
   
   const [newReport, setNewReport] = useState({
     title: '',
@@ -22,28 +25,27 @@ export function IncidentReports() {
   });
 
   const addReport = async () => {
-    if (!collection || !newReport.title.trim()) return;
+    if (!newReport.title.trim()) return;
 
     try {
-      const reportData: Omit<IncidentReport, '_id'> = {
-        ...newReport,
+      const reportData: IncidentReport = {
+        _id: `report-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        title: newReport.title,
+        description: newReport.description,
         timestamp: new Date().toISOString(),
         deviceId: ditto.presence.graph.localPeer.deviceName,
         status: 'pending',
+        priority: newReport.priority,
       };
 
-      await collection.upsert({
-        _id: `report-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-        ...reportData,
-      });
-
-      incidentLogger.report('added');
+      await upsert(reportData);
       setNewReport({ title: '', description: '', priority: 'medium' });
     } catch (err) {
       console.error('❌ Failed to add report:', err);
     }
   };
 
+  const error = collectionError || queryError;
   if (error) {
     return <Text className="text-red-500">Error: {error}</Text>;
   }
@@ -88,7 +90,7 @@ export function IncidentReports() {
               report.priority === 'critical' ? 'destructive' :
               report.priority === 'high' ? 'warning' : 'outline'
             }>
-              {report.priority}
+              <BadgeText>{report.priority}</BadgeText>
             </Badge>
           </HStack>
           {report.description && (

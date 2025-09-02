@@ -1,4 +1,3 @@
-// hooks/use-mesh-status.ts
 import type { MeshStatus } from '@/types/incident';
 import type { Ditto } from '@dittolive/ditto';
 import { useEffect, useState } from 'react';
