@@ -1,5 +1,5 @@
 import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
-import { IncidentDittoProvider } from '@/context/incident-ditto-context';
+import { DittoProvider } from '@/context/ditto-context';
 import '@/global.css';
 import { useCustomFonts } from '@/hooks/use-custom-fonts';
 import { ThemeContext, useThemeState } from "@/hooks/use-theme";
@@ -38,8 +38,7 @@ export default function RootLayout() {
     <ThemeContext.Provider value={themeState}>
       <GluestackUIProvider mode={themeState.isDarkMode ? 'dark' : 'light'}>
         <ThemeProvider value={themeState.isDarkMode ? DarkTheme : DefaultTheme}>
-          {/* No longer needs incidentKey prop */}
-          <IncidentDittoProvider>
+        <DittoProvider>
             <Stack screenOptions={{ headerShown: false }}>
               <Stack.Screen 
                 name="index" 
@@ -62,7 +61,7 @@ export default function RootLayout() {
                 }} 
               />
             </Stack>
-          </IncidentDittoProvider>
+          </DittoProvider>
         </ThemeProvider>
       </GluestackUIProvider>
     </ThemeContext.Provider>

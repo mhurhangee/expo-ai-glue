@@ -1,4 +1,5 @@
 import { Icon } from '@/components/icon';
+import { MeshHealthDot } from '@/components/mesh-health-dot';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Box } from '@/components/ui/box';
 import { Button, ButtonText } from '@/components/ui/button';
@@ -74,6 +75,7 @@ export default function WelcomeScreen() {
               <Text className="text-sm text-typography-500 text-center">
                 <Icon name="wifi-off" size={10} className="mr-3" /> Uses offline mesh networking
               </Text>
+              <MeshHealthDot />
               <Text className="text-xs text-typography-400 text-center">
                 No internet required
               </Text>

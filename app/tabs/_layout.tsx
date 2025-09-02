@@ -1,5 +1,5 @@
 import { Icon } from '@/components/icon';
-import { MeshStatusIndicator } from '@/components/mesh-status-indicator';
+import { MeshHealthDot } from '@/components/mesh-health-dot';
 import { useTheme } from '@/hooks/use-theme';
 import { Tabs } from 'expo-router';
 import { Platform } from 'react-native';
@@ -11,7 +11,7 @@ export default function TabLayout() {
     return (
         <SafeAreaView style={{ flex: 1 }} edges={['top']}>
             {/* Incident mesh status indicator at the top */}
-            <MeshStatusIndicator />
+            <MeshHealthDot />
             
             <Tabs
                 initialRouteName='dashboard'
