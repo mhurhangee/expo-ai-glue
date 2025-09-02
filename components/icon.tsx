@@ -2,11 +2,13 @@ import FeatherIcon from '@expo/vector-icons/Feather';
 import React from 'react';
 import { useColorScheme, View, ViewStyle } from 'react-native';
 
-type IconVariant = 'primary' | 'secondary' | 'muted' | 'inverse' | 'negative';
+type IconVariant = 'primary' | 'secondary' | 'muted' | 'inverse' | 'negative' | 'positive';
 type ColorScheme = 'light' | 'dark' | 'auto';
 
+export type IconName = React.ComponentProps<typeof FeatherIcon>['name'];
+
 interface IconProps {
-  name: React.ComponentProps<typeof FeatherIcon>['name'];
+  name: IconName;
   size?: number;
   className?: string;
   variant?: IconVariant;
@@ -34,6 +36,7 @@ export const Icon: React.FC<IconProps> = ({
         case 'muted': return '#64748B'; // slate-500
         case 'inverse': return '#0F172A'; // slate-900
         case 'negative': return '#EF4444'; // red-500
+        case 'positive': return '#22C55D'; // green-600
         default: return '#F8FAFC';
       }
     } else {
@@ -43,6 +46,7 @@ export const Icon: React.FC<IconProps> = ({
         case 'muted': return '#64748B'; // slate-500
         case 'inverse': return '#F8FAFC'; // slate-50
         case 'negative': return '#DC2626'; // red-600
+        case 'positive': return '#22C55D'; // green-600
         default: return '#0F172A';
       }
     }
