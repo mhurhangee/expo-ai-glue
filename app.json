@@ -29,6 +29,7 @@
     },
     "plugins": [
       "expo-router",
+      "@dittolive/ditto",
       [
         "expo-splash-screen",
         {
