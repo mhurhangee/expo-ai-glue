@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { CONTACT_DATA } from './contact';
 
 export interface LearnMoreItem {
   id: string;
@@ -107,6 +108,13 @@ export const LEARN_MORE_DATA: LearnMoreItem[] = [
     }
   },
   {
+    id: 'devices',
+    icon: 'smartphone',
+    title: 'What devices are supported?',
+    type: 'text',
+    content: 'Ditto supports a wide range of devices, including iOS, and Android. The demo app is built with Expo for cross-platform support and testing. However, during development it was only tested on iOS devices.'
+  },
+  {
     id: 'contact',
     icon: 'mail',
     title: 'Questions about this demo?',
@@ -114,9 +122,9 @@ export const LEARN_MORE_DATA: LearnMoreItem[] = [
     content: {
       text: 'Feel free to reach out if you have questions about the implementation:',
       contacts: [
-        { type: 'email', value: 'm.hurhangee@me.com', icon: 'mail' },
-        { type: 'github', value: 'View Source Code', url: 'https://github.com/mhurhangee/incident', icon: 'github' },
-        { type: 'linkedin', value: 'Connect on LinkedIn', url: 'https://linkedin.com/in/mhurhangee', icon: 'linkedin' }
+        { type: 'email', value: CONTACT_DATA.email, icon: 'mail' },
+        { type: 'github', value: 'View Source Code', url: CONTACT_DATA.github, icon: 'github' },
+        { type: 'linkedin', value: 'Connect on LinkedIn', url: CONTACT_DATA.linkedin, icon: 'linkedin' }
       ]
     }
   }

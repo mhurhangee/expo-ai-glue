@@ -7,6 +7,7 @@ import { HStack } from '@/components/ui/hstack';
 import { Link } from '@/components/ui/link';
 import { Text } from '@/components/ui/text';
 import { VStack } from '@/components/ui/vstack';
+import { CONTACT_DATA } from '@/constants/contact';
 import { router } from 'expo-router';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
@@ -84,14 +85,17 @@ export default function WelcomeScreen() {
         <Box className="pb-4 items-center">
           <VStack className="items-center">
             <Text className="text-sm font-mono text-typography-950">
-              Built by m.hurhangee@me.com
+              Built by {CONTACT_DATA.email}
             </Text>
             <HStack className="gap-4 mt-4">
-              <Link href="https://github.com/mhurhangee/incident">
+              <Link href={CONTACT_DATA.github}>
                 <Icon size={16} name="github" />
               </Link>
-              <Link href="mailto:m.hurhangee@me.com">
+              <Link href={`mailto:${CONTACT_DATA.email}`}>
                 <Icon size={16} name="mail" />
+              </Link>
+              <Link href={CONTACT_DATA.linkedin}>
+                <Icon size={16} name="linkedin" />
               </Link>
             </HStack>
           </VStack>
